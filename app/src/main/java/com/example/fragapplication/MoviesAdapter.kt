@@ -14,11 +14,11 @@ import com.squareup.picasso.Picasso
 class MoviesAdapter(private val activity: Activity) :
     RecyclerView.Adapter<MoviesAdapter.MyViewHolder>() {
 
-    private var countryList: List<MovieModel>? = null
+    private var movieList: List<MovieModel>? = null
 
 
-    fun setMovieList(countryList: List<MovieModel>?) {
-        this.countryList = countryList
+    fun setMovieList(movieList: List<MovieModel>?) {
+        this.movieList = movieList
     }
 
     override fun onCreateViewHolder(
@@ -31,15 +31,15 @@ class MoviesAdapter(private val activity: Activity) :
     }
 
     override fun onBindViewHolder(holder: MoviesAdapter.MyViewHolder, position: Int) {
-        Log.i("data", "" + countryList?.size)
-        holder.bind(countryList?.get(position)!!, activity)
+        Log.i("data", "" + movieList?.size)
+        holder.bind(movieList?.get(position)!!, activity)
     }
 
     override fun getItemCount(): Int {
-        if (countryList == null)
+        if (movieList == null)
             return 0
         else
-            return countryList?.size!!
+            return movieList?.size!!
     }
 
     class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
