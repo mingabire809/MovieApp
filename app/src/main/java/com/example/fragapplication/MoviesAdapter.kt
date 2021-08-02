@@ -25,6 +25,8 @@ class MoviesAdapter(private val activity: Activity) :
         parent: ViewGroup,
         viewType: Int
 
+
+
     ): MoviesAdapter.MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.row_layout, parent, false)
 
